@@ -1,0 +1,113 @@
+# -------------------------
+# BEGIN General
+# -------------------------
+
+# Node artifact files
+node_modules/
+dist/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore OS generated files
+.DS_Store
+ehthumbs.db
+Thumbs.db
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+
+# ignore all files starting with . or ~
+# .*
+# ~*
+
+# -------------------------
+# BEGIN WORDPRESS
+# -------------------------
+
+# ignore everything in the root except the "wp-content" directory.
+/*
+!wp-content/
+
+# ignore everything in the "wp-content" directory, except:
+!wp-data/
+!wp-data/*
+!wp-data/acf/
+!wp-data/db/
+!wp-data/plugins/
+!wp-data/*.zip
+!wp-data/*.gz
+!wp-data/*/*.zip
+!wp-data/*/*.gz
+
+# ignore everything in the "wp-content" directory, except:
+# mu-plugins, plugins, and themes directories
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore all mu-plugins, plugins, and themes
+# unless explicitly whitelisted at the end of this file
+wp-content/mu-plugins/*
+wp-content/plugins/*
+wp-content/themes/*
+
+
+# -------------------------
+# BEGIN Whitelisted Files
+# -------------------------
+
+# track these files, if they exist
+!.gitignore
+!.editorconfig
+!README.md
+!CHANGELOG.md
+!composer.json
+
+# track favicon files, if they exist
+!android-chrome-*.png
+!apple-touch-icon*.png
+!browserconfig.xml
+!favicon*.png
+!favicon*.ico
+!manifest.json
+!mstile-*.png
+!safari-pinned-tab.svg
+
+# track these mu-plugins, plugins, and themes
+# add your own entries here
+!wp-content/themes/shoploft/
+# !wp-content/plugins/example-plugin/
+# !wp-content/mu-plugins/example-mu-plugin/
+!wp-config-template.php
+!run.sh
+
+# IDE and editor code
+.vscode/
+.idea/
