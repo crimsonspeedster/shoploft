@@ -1,0 +1,311 @@
+
+/* 1. Catalog-cards  */
+/* 2. rectangle-cards  */
+
+
+/* Catalog-cards  */
+
+.cards-block{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 83px;
+    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    // height: 100%;
+    background-color: #fff; 
+    position: relative;
+    text-decoration: none;
+    margin-bottom: 20px;
+    .card-image-wrap{
+        width: 100%;
+        height: 337px;
+        display: block;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }  
+    .image-change.image-second {
+        display: none;        
+    }  
+    &:hover{
+        .image-change.image-second {
+            display: block;        
+        }  
+        .image-change.image-first {
+            display: none;        
+        } 
+        .card-name{
+            color: #E31727;
+        }
+
+    }
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+    padding: 17px 19px;
+    background-color: #fff;
+    flex-grow: 1;
+}
+
+.card-top, .card-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+        margin: 0px;;
+    }
+}
+
+
+.card-top__info{
+        color: #636363;
+        font-family: inherit;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 18px;
+    span{
+        color: #070707;
+    }
+}
+
+.card-name{
+    flex-grow: 1;
+    min-height: 46px;
+    max-width: 282px;
+    margin-bottom: 18px;
+    color: #000;
+    /* Loft Card-name */
+    font-family: inherit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 144%; /* 23.04px */
+    transition: all ease 0.3s;
+}
+.card-bottom {
+
+    .price-place{
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        p{
+            display: inline-block;
+            margin: 00px;
+            
+        }
+        .price-new{
+            color: #E31727;
+            font-family: inherit;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+        .old-price{
+            color: #7B7B7B;
+            font-family: inherit;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-decoration-line: line-through;
+        }    
+    
+        .screen-reader-text{
+            height: 0px;
+            opacity: 0;
+            width: 0;
+        }
+          
+        del{
+            text-decoration: none;
+            .woocommerce-Price-amount, .woocommerce-Price-currencySymbol{
+            color: #7B7B7B;
+            font-family: inherit;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-decoration-line: line-through;
+            margin-left: 5px;
+            }
+        }        
+        ins{
+            text-decoration: none;
+            .woocommerce-Price-amount, .woocommerce-Price-currencySymbol {
+                color: #E31727;
+                font-family: inherit;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+
+.tekeit-button{
+    border: none; 
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    display: inline;
+    svg{
+        transition: all ease 0.3s;
+
+    }
+    &:hover{
+        svg{
+            path{
+                fill: red;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1300px){
+    .card {
+        max-width: 32%;
+        width: 380px;
+    }
+}
+
+@media screen and (max-width: 980px ){    
+    .cards-block {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+@media screen and (max-width: 970px){
+    .card {
+        max-width: 47%;
+        width: 380px;
+    }
+    .card .card-image-wrap {
+        width: 100%;
+        height: 259px;
+    }
+}
+
+
+@media screen and (max-width: 768px){
+    .cards-block {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .card-bottom .price-place del .woocommerce-Price-amount, .card-bottom .price-place del .woocommerce-Price-currencySymbol{
+        margin-left: 0px;
+    }
+    .card .card-image-wrap {
+        width: auto;
+        height: 166px;
+        width: 301px;    
+    }
+    .cards-block{
+        margin-bottom: 20px;
+    }
+    .card-bottom .price-place{
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 508px){
+    .cards-block {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .card {
+        display: flex;
+        width: 100%;;
+        max-width: 100%;;
+        flex-direction: row;
+    }
+    .card-name{
+        font-size: 15px;
+    }
+    .price-place .price-new{
+        font-size:14px;
+    }
+    .card .card-image-wrap {
+        width: auto;
+        height: 150px;
+        width: 227px;
+    }
+    .card-info {
+        padding: 10px 14px;
+    }
+    .card-top__info {
+
+        font-size: 10px;
+    }
+    .cards-block .card .card-image-wrap {
+        width: 150px;
+        height: 168px;
+        min-width: 150px;
+    }
+}
+
+
+/* 2. rectangle-cards  */
+
+
+.pop-item{
+    margin: 10px;
+}
+.rectangle-card{
+    cursor: pointer;
+    width: 328px;
+    margin: 0px 13px 0px 2px;
+    margin: 0px 4px 0px 0px;
+    height: 299px;
+    position: relative;
+    display: table-cell;
+    .rectangle-image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all ease 0.3s;
+        filter: brightness(0.8);
+    }
+    .rectangle-name{
+        position: absolute;
+        top: 45%;
+        left:0px;
+        right: 0px;
+        display: block;
+        text-align: center;
+        width: 215px;
+        margin: 0 auto;
+        color: white;
+        font-family: inherit;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        transition: all ease 0.3s;
+    }
+    &:hover{
+        .rectangle-image{
+            filter: brightness(0.3);
+        }
+    }
+
+}
+
+
+

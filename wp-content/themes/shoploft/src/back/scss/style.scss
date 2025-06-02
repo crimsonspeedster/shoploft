@@ -1,0 +1,7 @@
+@import "./components/media";
+
+form.woocommerce-ordering,
+body.single .wc-forward,
+.button-container .quantity {
+    display: none !important;
+}

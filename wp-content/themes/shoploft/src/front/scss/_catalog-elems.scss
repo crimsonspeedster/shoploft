@@ -1,0 +1,148 @@
+.flex-line, .limit, .pagination{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.limit{
+    span{
+        color: #141414;
+        font-family: inherit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal; 
+        margin-right: 13px;
+    }
+    a{
+        color: #141414;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 10px;
+        margin: 0px 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        &.active, &:hover{
+            color: #FF0524;
+        }
+    }
+}
+
+.pagination{
+    display: flex;
+
+    .pagination-page{
+        color: #141414;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 10px;
+        margin: 0px 11px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        &.active, &:hover{
+            color: #FF0524;
+        }
+    }
+    .wrap-pag{
+        margin: 0px 35px;
+    }
+}
+
+.page-numbers{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    li {
+        .page-numbers{
+           color: #141414;
+            font-family: Montserrat;
+            font-size:20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            padding: 10px;
+            margin: 0px 11px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            &.active, &:hover, &.current{
+                color: #FF0524;
+            }  
+        }
+        .prev, .next{
+            width: 65px;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+.flex-line{
+    margin-bottom: 70px;;
+}
+
+@media screen and (max-width: 980px){
+    .page-numbers li .page-numbers{
+        font-size: 14px;
+    }
+    .page-numbers li .prev, .page-numbers li .next {
+        width: 40px;
+    }
+  .pagination .pagination-page {
+    font-size: 15px;
+}
+.pagination .wrap-pag {
+    margin: 0px 30px;
+}
+.limit span {
+    font-size: 17px;
+}
+.limit a {
+    font-size: 14px;
+}
+ .pagination .nav-item {
+    max-width: 25px;
+    svg{
+        width: 100%;
+    }
+ }
+
+}
+
+@media screen and (max-width: 678px){
+    .flex-line{
+        flex-direction: column;
+      }
+      .limit{
+        margin-bottom: 15px;
+      }
+      .limit span{
+        font-size: 14px;;
+        margin-right: 10px;
+      }
+      .limit a{
+        padding: 5px;
+        margin: 0px 4px;
+        font-size: 14px;
+      }
+      .pagination .wrap-pag{
+        margin: 0px 20px;
+      }
+      .pagination .pagination-page {
+        padding: 7px;
+        margin: 0px 0px;
+        font-size: 14px;;
+      }
+      .pagination .nav-item{
+        width: 20px;
+        svg{
+            width: 100%;
+        }
+      }
+}
