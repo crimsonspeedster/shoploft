@@ -12,8 +12,6 @@ document.querySelectorAll('.quantity > button').forEach(item => item.addEventLis
         max = parseInt(max);
     }
 
-    console.log(value);
-
     if (item.classList.contains('minus')) {
         if (min && value <= min) {
             return;

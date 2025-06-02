@@ -1,9 +1,13 @@
 <?php
 // functions
 function tab_shipping_payment_content() {
-    ?>
+    $product__delivery_tab = get_field('product__delivery_tab', 'option');
 
-    <?php
+    if ($product__delivery_tab) {
+        ?>
+        <div><?= apply_filters('the_content', $product__delivery_tab); ?></div>
+        <?php
+    }
 }
 
 // Actions
@@ -155,14 +159,16 @@ add_action('woocommerce_single_product_summary', function () {
     <?php
 }, 65);
 add_action('woocommerce_after_add_to_cart_button', function () {
-    if (true) {
+    $product__telegram = get_field('product__telegram', 'option');
+
+    if (!empty($product__telegram)) {
         ?>
-        <a href="#" class="button-link blue">
+        <a href="<?= $product__telegram['url']; ?>" class="button-link blue" <?php getLinkAttrs($product__telegram); ?>>
             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none">
                 <path d="M21.4141 1.96387L8.30762 11.1309L8.27441 11.1533L8.30566 11.1797L17.1426 18.7451C17.1586 18.7591 17.1763 18.771 17.1953 18.7803L17.2559 18.8008C17.298 18.809 17.3422 18.8059 17.3828 18.792L17.3818 18.791C17.4014 18.7853 17.4202 18.778 17.4375 18.7676L17.4854 18.7295C17.5137 18.6998 17.5339 18.6629 17.543 18.623L21.4619 1.99707L21.4814 1.91699L21.4141 1.96387ZM7.91406 17.7539C7.91455 17.8007 7.92905 17.8463 7.95605 17.8848C7.96952 17.904 7.98556 17.9212 8.00391 17.9355L8.06543 17.9697C8.08742 17.9783 8.11047 17.9844 8.13379 17.9863L8.20508 17.9814C8.22813 17.9766 8.25006 17.9681 8.27051 17.957L8.32715 17.915L11.0713 15.1338L11.0947 15.1094L11.0693 15.0879L7.96582 12.4355L7.91406 12.3916V17.7539ZM17.9609 2.87402L1.26562 9.25195C1.25671 9.25483 1.24772 9.25901 1.24023 9.26465L1.2334 9.27051L1.22949 9.2793C1.22295 9.29685 1.22283 9.31646 1.22949 9.33398L1.23535 9.34863L1.25098 9.35254L1.2666 9.35742H1.26855L7.16699 10.4834L7.17969 10.4863L7.19043 10.4785L17.9902 2.92871L17.9609 2.87402ZM6.72168 11.5859L6.69629 11.5811L1.03809 10.4971C0.80611 10.4526 0.592619 10.3449 0.421875 10.1875L0.351562 10.1172C0.193588 9.94603 0.088649 9.73528 0.0488281 9.50977L0.0361328 9.41211C0.0150408 9.18285 0.061059 8.95283 0.167969 8.74902L0.217773 8.66309C0.341985 8.46727 0.520367 8.31045 0.731445 8.20996L0.824219 8.16992L22.0117 0.078125C22.1008 0.0440441 22.196 0.0281727 22.291 0.03125L22.3857 0.0410156C22.48 0.0567565 22.5698 0.0911906 22.6494 0.141602L22.7256 0.197266C22.7979 0.258154 22.857 0.332867 22.8984 0.416016L22.9336 0.501953C22.9633 0.590588 22.9744 0.684141 22.9658 0.776367L22.9512 0.867188L18.7041 18.8848C18.6633 19.0616 18.5876 19.2285 18.4814 19.376L18.3652 19.5166C18.2395 19.6502 18.0883 19.7577 17.9209 19.834L17.749 19.8994C17.6048 19.9448 17.4534 19.9675 17.3018 19.9678C16.9983 19.9674 16.7046 19.8731 16.4619 19.6992L16.3604 19.6201L12.0137 15.9014L11.9912 15.8818L11.9707 15.9033L9.18555 18.7217C8.98747 18.9222 8.73249 19.061 8.45312 19.1191C8.20877 19.17 7.9556 19.1577 7.71875 19.084L7.61816 19.0488C7.35328 18.9446 7.12649 18.765 6.9668 18.5342C6.80718 18.3034 6.72179 18.0312 6.72168 17.7529V11.5859Z" fill="#249ED7" stroke="#2CA3DB" stroke-width="0.0625"/>
             </svg>
 
-            <?= __('Оформлення в telegram', 'shoploft'); ?>
+            <?= $product__telegram['title']; ?>
         </a>
         <?php
     }
@@ -279,10 +285,21 @@ add_action('woocommerce_after_my_account_content', function () {
     <?php
 });
 add_action('woocommerce_proceed_to_checkout', function () {
-     ?>
+    ?>
     <a href="<?= esc_url(get_permalink(wc_get_page_id('shop'))); ?>" class="btn btn--secondary"><?= __('Продовжити покупки', 'shoploft'); ?></a>
     <?php
 }, 10);
+add_action('woocommerce_checkout_before_customer_details', function () {
+    get_template_part('partials/woocommerce/checkout-top');
+}, 10);
+add_action('wp_body_open', function () {
+    if (is_singular('product')) {
+        global $product;
+        ?>
+        <input type="hidden" value="<?= $product->get_id(); ?>" name="current_product_id" readonly>
+        <?php
+    }
+});
 
 
 
@@ -314,11 +331,15 @@ add_filter('woocommerce_product_price_class', function () {
 add_filter( 'woocommerce_product_tabs', function ($tabs) {
     unset( $tabs['description'] );
 
-    $tabs['shipping_payment'] = array(
-        'title'    => __( 'Доставка і оплата', 'shoploft' ),
-        'priority' => 50,
-        'callback' => 'tab_shipping_payment_content'
-    );
+    $product__delivery_tab = get_field('product__delivery_tab', 'option');
+
+    if ($product__delivery_tab) {
+        $tabs['shipping_payment'] = array(
+            'title'    => __( 'Доставка і оплата', 'shoploft' ),
+            'priority' => 50,
+            'callback' => 'tab_shipping_payment_content'
+        );
+    }
 
     return $tabs;
 }, 98 );

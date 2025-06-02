@@ -32,26 +32,6 @@ defined( 'ABSPATH' ) || exit;
         </div>
     </div>
 
-    <?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
-
-        <?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
-
-        <div class="cart-summary__section">
-            <div class="sammary-delivery">
-                <div class="cart-summary__label"><?php esc_html_e( 'Shipping', 'woocommerce' ); ?></div>
-
-                <ul id="shipping_method" class="woocommerce-shipping-methods cart-summary__delivery">
-                    <?php wc_cart_totals_shipping_html(); ?>
-                </ul>
-            </div>
-
-            <p class="cart-summary__note"><?= __('Варіанти доставки будуть оновлені під час оформлення замовлення.', 'shoploft'); ?></p>
-        </div>
-
-        <?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
-
-    <?php endif; ?>
-
     <div class="cart-summary__section">
         <div class="cart-summary__row cart-summary__row--total">
             <span><?php esc_html_e( 'Total', 'woocommerce' ); ?></span>

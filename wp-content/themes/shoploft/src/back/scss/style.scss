@@ -5,3 +5,7 @@ body.single .wc-forward,
 .button-container .quantity {
     display: none !important;
 }
+
+.rating--active {
+    pointer-events: none;
+}

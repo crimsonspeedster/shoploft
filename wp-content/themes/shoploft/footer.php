@@ -49,6 +49,9 @@ $common__logo = get_field('common__logo', 'option');
         </footer>
     </div>
 </div>
+
+<?php get_template_part('partials/global/popups'); ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>

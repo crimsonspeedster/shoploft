@@ -28,28 +28,6 @@ const fields = [
     });
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // --- Радіокнопки ---
-    const radios = document.querySelectorAll('input[name="delivery_id"]');
-    const containers = document.querySelectorAll(".delivery-address-container");
-  
-    function toggleContainers() {
-      containers.forEach(c => c.classList.remove("active"));
-      const checked = document.querySelector('input[name="delivery_id"]:checked');
-      const targetId = checked?.getAttribute("data-target");
-      const target = document.getElementById(targetId);
-      if (target) target.classList.add("active");
-    }
-  
-    radios.forEach(radio => {
-      radio.addEventListener("change", toggleContainers);
-    });
-  
-    toggleContainers();
-  
-    
-  });
-
   document.querySelectorAll('.dropdown').forEach(dropdown => {
     const input = dropdown.querySelector('input');
     const options = dropdown.querySelector('.options');
