@@ -380,6 +380,19 @@ add_filter('woocommerce_add_to_cart_fragments', function($fragments) {
 
     return $fragments;
 });
+add_filter('woocommerce_add_to_cart_fragments', function($fragments) {
+    ob_start();
+    ?>
+    <p class="modal-text__product_amount">
+        <?=
+            str_replace('%s1', WC()->cart->get_cart_contents_count(), __('У вас у кошику <span class="goods-count">%s1</span> товар', 'shoploft'));
+        ?>
+    </p>
+    <?php
+    $fragments['.modal-text__product_amount'] = ob_get_clean();
+
+    return $fragments;
+});
 add_filter('acf/load_field', function ($field) {
     if ($field['key'] === 'block-navigation_menu') {
         $menus = wp_get_nav_menus();
