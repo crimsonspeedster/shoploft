@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 });
 
 document.body.addEventListener('click', function(event) {
-    if (event.target.classList.contains('closeModal') || event.target.closest('.closeModal') || event.target.classList.contains('modalOverlay') || event.target.closest('.modalOverlay')) {
+    if (event.target.classList.contains('closeModal') || event.target.closest('.closeModal') || event.target.classList.contains('modalOverlay')) {
         if (lastOverlay) {
             activeToggle(lastOverlay);
             lastOverlay = null;

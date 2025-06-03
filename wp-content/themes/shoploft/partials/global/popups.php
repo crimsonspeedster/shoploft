@@ -35,6 +35,9 @@ $common__logo = get_field('common__logo', 'option');
                         <button class="btn-togo" >Увійти</button>
                     </div>
                 </form>
+
+                <?php echo do_shortcode('[woocommerce_my_account]'); ?>
+
                 <div class="links-line">
                     <a href="#" class="link-type" data-trigger-modal="pwforgot">Забули пароль?</a>
                     <a href="#" class="link-type reGistrationTrigger" data-trigger-modal="register">Пройти реєстрацію</a>
