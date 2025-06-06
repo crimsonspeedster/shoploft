@@ -17,6 +17,6 @@ mix
     .copy('src/front/fonts', 'dist/front/fonts')
     .copy('src/front/carousel', 'dist/front/carousel')
     .browserSync({
-        proxy: "nginx",
+        proxy: "192.168.0.34",
         files: ['dist/css', 'dist/js', './**/*.php'],
     }).sourceMaps();

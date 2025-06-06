@@ -31,6 +31,8 @@
   text-align: left;
 }
 
+
+
 /* 2. products table  */
 
 .first-form {
@@ -56,7 +58,7 @@
   }
   td.product-subtotal,
   td.product-price {
-    padding-top: 10px;
+    padding-top: 0px;
   }
 }
 
@@ -350,6 +352,47 @@
 }
 .price-small {
   display: none;
+}
+
+.cart__info{
+  a{
+    color: #000;
+    text-decoration: none;
+    transition: all ease 0.3s;
+    &:hover{
+      color: #e31727;
+    }
+  }
+}
+
+.actions{
+  button{
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    margin-bottom: 12px;
+    color: #000;
+    margin-top: 50px;
+    &:hover{
+        color: #fff;
+        background-color: #000;;
+    }
+  }
+}
+
+.woocommerce-cart-form__cart-item{
+  margin-bottom: 50px;
+
 }
 
 /* 4. has account  */
@@ -665,6 +708,7 @@ textarea {
 
 /* 6. order table  */
 .shop_table {
+  margin-bottom: 50px;
   .cart__header{
     th{
       font-weight: 500;
@@ -1067,6 +1111,10 @@ textarea {
     height: 100%;
     width: 100%;
     min-width: auto;
+    a{
+      color: #101010;
+    }
+
   }
   .cart__title {
     font-size: 16px;

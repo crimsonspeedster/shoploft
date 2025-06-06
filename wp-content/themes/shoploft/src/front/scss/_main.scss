@@ -49,6 +49,51 @@
 }
 
 
+.shipping_method{   
+    list-style: none;
+    padding-left: 0px;
+    li{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        input{
+            margin-right: 5px;
+        }
+    }
+    label{
+        margin-bottom: 0px;
+    }
+}
+
+.BuyNowProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    .productName{
+        color: #000;
+        font-family: inherit;
+        font-size: 16px;
+    }
+    .PdoructQuunt{
+        color: #424141;
+        font-family: inherit;
+        font-size: 13px;
+    }
+    .ProductPrice{
+        color: #000;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .sunToBuy{
+        color: #000;
+        font-family: inherit;
+        font-size: 17px;
+        font-weight:700;
+    }
+}
+
+
 .LoginForm{
 }
 .formStyle{

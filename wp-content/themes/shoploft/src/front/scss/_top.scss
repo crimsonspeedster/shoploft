@@ -184,11 +184,28 @@
     line-height: normal;
 }
 
-.breadcrumb {
+.breadcrumbs {
     font-size: 14px;
     margin-bottom: 12px;
     margin-top:20px;
+    a{
+    text-decoration: none;
+    transition: color 0.2s;
+    color: #0D0D0D;
+    font-family: inherit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &:hover{
+      color: #000;
+    }
   }
+  .breadcrumb_last{
+    text-shadow: 0px 0px #000;
+  }
+
+}
   
   .breadcrumb-list {
     list-style: none;
@@ -206,7 +223,7 @@
     line-height: normal;
     color: #919191;
   }
-  .breadcrumb-list li a {
+  .breadcrumb-list li a , a{
     text-decoration: none;
     transition: color 0.2s;
     color: #0D0D0D;

@@ -59,7 +59,7 @@
     margin: 0 10px;
     margin: 10px 10px;
     .wrap-image{
-      width: 200px;
+      width: 150px;
       height: 145px;
       min-width: 155px;
       min-height: 145px;
@@ -77,6 +77,29 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    width: 100%;
+    .warap-prices{
+      del{
+        color: #939393;
+        font-family: inherit;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: line-through;
+        text-transform: uppercase;
+      }
+      ins{
+        color: #595959;
+        font-family: inherit;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
   }
   
   .inner-slider-name{
@@ -139,7 +162,6 @@
   top:20px;
 }
 
-
 .inner-arrow {
   background: none;
   border: none;
@@ -166,6 +188,8 @@
   right: 36px;
   bottom: 39px;
 }
+
+
 
 @media screen and (max-width: 1500px){
   .slide-title{
