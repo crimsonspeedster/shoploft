@@ -49,13 +49,14 @@
 }
 
 
-.shipping_method{   
+.woocommerce-shipping-methods{   
     list-style: none;
     padding-left: 0px;
     li{
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        margin-bottom: 20px;
         input{
             margin-right: 5px;
         }
@@ -64,6 +65,12 @@
         margin-bottom: 0px;
     }
 }
+
+.zen-ui-select__value{
+    background-color: transparent;
+}
+
+
 
 .BuyNowProduct{
     display: flex;
