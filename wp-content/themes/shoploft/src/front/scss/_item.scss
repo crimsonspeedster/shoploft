@@ -125,6 +125,7 @@ html:has(.modal.active) {
     align-items: flex-start;
     flex-direction: row;
     margin-bottom: 100px;
+    height: 100vh;
 }
 
 .wrap-item-image{
@@ -145,7 +146,8 @@ html:has(.modal.active) {
     align-items: flex-start;
     gap: 20px;
     position: sticky;
-    max-height: calc(100vh - 120px);
+    // max-height: calc(100vh - 120px);
+    max-height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     margin-right: 12px;
@@ -159,7 +161,7 @@ html:has(.modal.active) {
     // max-height: calc(100vh - 120px);
     max-height: 100%;
     overflow-y: auto;
-    position: relative; 
+    // position: relative; 
 }
 
 .wrap-item-info {

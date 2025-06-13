@@ -3,30 +3,43 @@ const modals = overlays?.querySelectorAll('.modal');
 const triggers = document.querySelectorAll('[data-trigger-modal]');
 
 const overlayModal = {};
-modals?.forEach(el => overlayModal[el.dataset.modal] = el);
+modals?.forEach(el => {
+    overlayModal[el.dataset.modal] = el;
+
+    // Додаємо обробник, щоб зупинити спливання,
+    // але дозволити клік по .closeModal
+    el.addEventListener('click', e => {
+        if (!e.target.closest('.closeModal')) {
+            e.stopPropagation();
+        }
+    });
+});
+
 let lastOverlay = null;
 
 const activeToggle = element => {
     if (!element) return;
-    element?.classList.toggle('active');
+    element.classList.toggle('active');
 };
 
+// Закриття при кліку на оверлей або на .closeModal
 overlays?.addEventListener('click', e => {
-    let target = e.target;
-    let modal = overlays.querySelector(".modal.active");
-    
-    if (overlays == target 
-        || modal.querySelector(".closeModal") == target.closest(".closeModal")){
-            if (lastOverlay){
-                activeToggle(lastOverlay);
-                lastOverlay = null;
-            }
-        }
+    const target = e.target;
+    const activeModal = overlays.querySelector(".modal.active");
+
+    const isOverlayClicked = target === overlays;
+    const isCloseClicked = target.closest(".closeModal");
+
+    if ((isOverlayClicked || isCloseClicked) && activeModal) {
+        activeToggle(activeModal);
+        lastOverlay = null;
+    }
 });
 
+// Відкриття модалки по data-trigger-modal
 triggers?.forEach(trigger => {
-    let triggerName = trigger.dataset?.triggerModal;
-    if (!triggerName && !triggerName in overlayModal) return;
+    const triggerName = trigger.dataset?.triggerModal;
+    if (!triggerName || !(triggerName in overlayModal)) return;
 
     trigger.addEventListener('click', () => {
         if (lastOverlay) activeToggle(lastOverlay);
@@ -34,7 +47,6 @@ triggers?.forEach(trigger => {
         lastOverlay = overlayModal[triggerName];
     });
 });
-
 /* const openBtn = document.querySelector('.trigger-add-to-cart');
 const closeBtn = document.querySelector('.closeModal');
 const exitBtn = document.querySelector('.exit-btn');

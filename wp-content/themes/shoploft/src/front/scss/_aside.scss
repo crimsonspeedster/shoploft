@@ -65,6 +65,21 @@
   overflow: hidden;
 }
 
+.catalog-menu-list.active-list{
+  background-color: #f1f1f1;
+  a{
+    color: red;
+
+  }
+  .submenu-list.active{
+      background-color: #f1f1f1;
+      a{
+        color: red;
+
+      }
+  }
+}
+
 .catalog-menu.active {
   display: block;
 }
