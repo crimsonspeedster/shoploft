@@ -49,6 +49,58 @@
 }
 
 
+.woocommerce-shipping-methods{   
+    list-style: none;
+    padding-left: 0px;
+    li{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+        input{
+            margin-right: 5px;
+        }
+    }
+    label{
+        margin-bottom: 0px;
+    }
+}
+
+.zen-ui-select__value{
+    background-color: transparent;
+}
+
+
+
+.BuyNowProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    .productName{
+        color: #000;
+        font-family: "Montserrat";
+        font-size: 16px;
+    }
+    .PdoructQuunt{
+        color: #424141;
+        font-family: "Montserrat";
+        font-size: 13px;
+    }
+    .ProductPrice{
+        color: #000;
+        font-family: "Montserrat";
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .sunToBuy{
+        color: #000;
+        font-family: "Montserrat";
+        font-size: 17px;
+        font-weight:700;
+    }
+}
+
+
 .LoginForm{
 }
 .formStyle{
@@ -81,7 +133,7 @@
     margin: 0 auto;
     .link-type{
         color: #000;
-        font-family: inherit;
+        font-family: "Montserrat";
         font-size: 16px;
         text-decoration: none;
         &:hover{
@@ -92,7 +144,7 @@
 
 .block-name {
     color: #000;
-    font-family: inherit;
+    font-family: "Montserrat";
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
@@ -103,7 +155,7 @@
 
 .see-all {
     color: #4C4C4C;
-    font-family: inherit;
+   font-family: "Montserrat";
     font-size: 15px;
     font-style: normal;
     font-weight: 600;
@@ -341,7 +393,7 @@ ul.slick-dots {
 
     .portfoplio-name {
         color: #FFF;
-        font-family: inherit;
+        font-family: "Montserrat";
         font-size: 32px;
         font-style: normal;
         font-weight: 700;
@@ -351,7 +403,7 @@ ul.slick-dots {
 
     .portfolio-text {
         color: #FFF;
-        font-family: inherit;
+        font-family: "Montserrat";
         font-size: 24px;
         font-style: normal;
         font-weight: 400;
@@ -369,7 +421,7 @@ ul.slick-dots {
         border: 2px solid #FFF;
         transition: all ease 0.3s;
         color: #FFF;
-        font-family: inherit;
+        font-family: "Montserrat";
         font-size: 16px;
         font-style: normal;
         font-weight: 600;
@@ -444,7 +496,7 @@ ul.slick-dots {
 }
 
 .sm-title {
-    font-family: inherit;
+    font-family: "Montserrat";
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -452,11 +504,12 @@ ul.slick-dots {
     text-transform: uppercase;
     margin: 0px;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .sm-big-number {
     color: #E4193B;
-    font-family: inherit;
+    font-family: "Montserrat";
     font-size: 64px;
     font-style: normal;
     font-weight: 700;
@@ -498,14 +551,22 @@ ul.slick-dots {
     flex-direction: column;
     justify-content: space-between;
     text-decoration: none;
+    &:hover{
+
+    }
 }
 
 .sm-1,
 .sm-3,
-.sm-item {
-    img {
+.sm-item,
+.media-item {
+    img{
         transition: all ease 0.3s;
+
     }
+    // img {
+    //     transition: all ease 0.3s;
+    // }
     &:hover {
         img {
             transform: scale(1.1);
@@ -513,7 +574,9 @@ ul.slick-dots {
     }
 }
 
-
+.woocommerce-info{
+    margin-bottom:50px;
+}
 
 .sm-icon {
     font-size: 32px;
@@ -521,6 +584,11 @@ ul.slick-dots {
     border-radius: 6px;
     padding: 5px;
     width: fit-content;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
 }
 
@@ -532,9 +600,11 @@ ul.slick-dots {
     flex-direction: row;
 
     .sm-icon {
-
         margin-right: 40px;
-        margin-left: 23px
+        margin-left: 23px;
+        img{
+            max-width: 35px;
+        }
     }
 }
 
@@ -552,13 +622,14 @@ ul.slick-dots {
 
 .sm-number {
     color: #FFF;
-    font-family: inherit;
-    font-size: 24px;
+    font-family: "Montserrat";
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
     text-decoration: none;
+    margin-top:0px;
 }
 
 .sm-number span {}
@@ -646,7 +717,7 @@ ul.slick-dots {
     }
     .col-name{
         color: #FFF;
-        font-family: inherit;
+        font-family: "Montserrat";
         font-size: 24px;
         font-style: normal;
         font-weight: 700;
@@ -656,7 +727,7 @@ ul.slick-dots {
     }
     .col-subname{
         color: #FFF;
-        font-family: inherit;
+        font-family: "Montserrat";
         font-size: 11px;
         font-style: normal;
         font-weight: 500;
@@ -668,7 +739,7 @@ ul.slick-dots {
         height: 27px;
         padding: 5px 15px ;
         color: #020202;
-        font-family: inherit;
+        font-family: "Montserrat";
         font-size: 12px;
         font-style: normal;
         font-weight: 600;
@@ -717,7 +788,7 @@ ul.slick-dots {
     width: 135px;
     margin-right: 50px;
     color: #474747;
-    font-family: inherit;
+    font-family: "Montserrat";
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -726,18 +797,18 @@ ul.slick-dots {
 
 .spoiler-simple{
     color: #797979;
-    font-family: inherit;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     line-height: 1.2;
     padding-top: 5px;
+    font-family: "Montserrat";
 }
 
 .spoiler-heading{
     color: #000;
-    font-family: inherit;
+    font-family: "Montserrat";
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -757,6 +828,8 @@ ul.slick-dots {
   .spoiler-text,
   .spoiler-more p {
     margin: 0 0 10px 0;
+    color: #797979;
+    font-weight: 500;
     
   }
   
@@ -777,7 +850,7 @@ ul.slick-dots {
     margin: 0 auto;
     display: block;
     color: #FF8484;
-    font-family: inherit;
+    font-family: "Montserrat";
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
@@ -807,6 +880,11 @@ ul.slick-dots {
         margin-bottom: 120px;
     }
 }
+
+
+
+
+
 
 @media screen and (max-width:1650px ){
     .potrfolio-slide .portfolio-info {
@@ -848,7 +926,7 @@ ul.slick-dots {
     }
     .col-card .col-name {
         color: #FFF;
-        font-family: inherit;
+        font-family: "Montserrat";
         font-size: 20px;
     }
     .col-card {
@@ -857,7 +935,7 @@ ul.slick-dots {
     }
     .sm-number {
         color: #FFF;
-        font-family: inherit;
+        font-family: "Montserrat";
         font-size: 20px;
     }
     .sm-item .sm-overlay .sm-icon {
