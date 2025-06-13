@@ -189,7 +189,16 @@
   bottom: 39px;
 }
 
-
+@media screen and (max-width: 1600px){
+  .slide-title{
+    font-size: 38px;
+    max-width: 54%;
+    padding-left: 74px;
+  }
+  .slide-subtitle{
+    padding-left: 74px;
+  }
+}
 
 @media screen and (max-width: 1500px){
   .slide-title{

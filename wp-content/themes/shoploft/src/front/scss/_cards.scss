@@ -65,6 +65,9 @@
         margin: 0px;;
     }
 }
+.card-top{
+    margin-bottom: 20px;
+}
 
 
 .card-top__info{
@@ -100,6 +103,8 @@
         display: flex;
         flex-direction: row;
         align-items: baseline;
+        position: relative;
+
         p{
             display: inline-block;
             margin: 00px;
@@ -131,6 +136,7 @@
           
         del{
             text-decoration: none;
+            order: 2;
             .woocommerce-Price-amount, .woocommerce-Price-currencySymbol{
             color: #7B7B7B;
             font-family: inherit;
@@ -144,6 +150,7 @@
         }        
         ins{
             text-decoration: none;
+            order:1;
             .woocommerce-Price-amount, .woocommerce-Price-currencySymbol {
                 color: #E31727;
                 font-family: inherit;

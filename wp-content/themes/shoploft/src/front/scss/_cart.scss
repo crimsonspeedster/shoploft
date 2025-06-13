@@ -390,10 +390,31 @@
   }
 }
 
-.woocommerce-cart-form__cart-item{
-  margin-bottom: 50px;
 
+input[type=number] {
+    -moz-appearance: textfield;       /* Firefox */
+    -webkit-appearance: none;         /* Chrome, Safari, Edge */
+    appearance: textfield;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.woocommerce-error{
+  max-width: 80%;
+  margin-bottom: 30px;
+  li{
+    color: red;
+  }
+}
+
+// .woocommerce-cart-form__cart-item{
+//   margin-bottom: 50px;
+
+// }
 
 /* 4. has account  */
 .account {
