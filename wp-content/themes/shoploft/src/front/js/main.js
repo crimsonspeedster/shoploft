@@ -148,59 +148,59 @@ toggleButtons.forEach(btn => {
 
 
 /// ПОШУК /// 
-// const products = [
-//   { name: "Світильник 1 ", img: "../images/pics/1.webp", link: "#" },
-//   { name: "Світильник 2", img: "../images/pics/1.webp", link: "#" },
-//   { name: "Світильник 3", img: "../images/pics/1.webp", link: "#" },
-// ];
+const products = [
+  { name: "Світильник 1 ", img: "../images/pics/1.webp", link: "#" },
+  { name: "Світильник 2", img: "../images/pics/1.webp", link: "#" },
+  { name: "Світильник 3", img: "../images/pics/1.webp", link: "#" },
+];
 
-// const input = document.getElementById('searchInput');
-// const resultsBox = document.getElementById('searchResults');
+const input = document.querySelector('.input-search');
+const resultsBox = document.getElementById('searchResults');
 
-// input.addEventListener('input', function () {
-//   const query = this.value.toLowerCase();
-//   resultsBox.innerHTML = '';
-//
-//   if (query.length < 1) {
-//     resultsBox.style.display = 'none';
-//     return;
-//   }
-//
-//   const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-//
-//   if (filtered.length > 0) {
-//     filtered.forEach(p => {
-//       const item = document.createElement('a');
-//       item.href = p.link;
-//       item.className = 'search-result-item';
-//       item.innerHTML = `<img src="${p.img}" alt="${p.name}"><span>${p.name}</span>`;
-//       resultsBox.appendChild(item);
-//     });
-//     resultsBox.style.display = 'block';
-//   } else {
-//     resultsBox.style.display = 'none';
-//   }
-// });
+input.addEventListener('input', function () {
+  const query = this.value.toLowerCase();
+  resultsBox.innerHTML = '';
 
-// document.addEventListener('click', function (e) {
-//   if (!document.querySelector('.group-search').contains(e.target)) {
-//     resultsBox.style.display = 'none';
-//   }
-// });
+  if (query.length < 1) {
+    resultsBox.style.display = 'none';
+    return;
+  }
+
+  const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+
+  if (filtered.length > 0) {
+    filtered.forEach(p => {
+      const item = document.createElement('a');
+      item.href = p.link;
+      item.className = 'search-result-item';
+      item.innerHTML = `<img src="${p.img}" alt="${p.name}"><span>${p.name}</span>`;
+      resultsBox.appendChild(item);
+    });
+    resultsBox.style.display = 'block';
+  } else {
+    resultsBox.style.display = 'none';
+  }
+});
+
+document.addEventListener('click', function (e) {
+  if (!document.querySelector('.group-search').contains(e.target)) {
+    resultsBox.style.display = 'none';
+  }
+});
 
 
 
-// const toggleBtn = document.getElementById("searchToggle");
-// const groupSearch = document.querySelector(".group-search");
-//
-// toggleBtn.addEventListener("click", () => {
-//   groupSearch.classList.toggle("active");
-// });
+const toggleBtn = document.getElementById("searchToggle");
+const groupSearch = document.querySelector(".group-search");
+
+toggleBtn.addEventListener("click", () => {
+  groupSearch.classList.toggle("active");
+});
 
 // Щоб закривати поле при кліку поза ним
-// document.addEventListener("click", (e) => {
-//
-//   if (!groupSearch.contains(e.target)) {
-//     groupSearch.classList.remove("active");
-//   }
-// });
+document.addEventListener("click", (e) => {
+
+  if (!groupSearch.contains(e.target)) {
+    groupSearch.classList.remove("active");
+  }
+});
