@@ -26,14 +26,6 @@ if( function_exists('acf_add_local_field_group') ) {
                 'placement' => 'top',
             ],
             [
-                'key' => 'acf_theme_settings_product-image--hover',
-                'name' => 'product__image_for_hover',
-                'label' => 'Image for product hover',
-                'type' => 'image',
-                'return_format' => 'id',
-                'required' => 0,
-            ],
-            [
                 'key' => 'acf_theme_settings_product-delivery_tab',
                 'name' => 'product__delivery_tab',
                 'label' => 'Product delivery tab',

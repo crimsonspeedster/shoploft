@@ -132,7 +132,6 @@ $common__logo = get_field('common__logo', 'option');
         }
     ?>
 
-
     <div class="modal" id="modal" data-modal="addProduct">
         <div class="modal-close closeModal">
             <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -174,56 +173,5 @@ $common__logo = get_field('common__logo', 'option');
                 <?= wp_get_attachment_image($common__logo, 'full', null, ['class' => 'logo']); ?>
             </a>
         </div>
-    </div> 
-
-
-            <div class="modal" id="modalBuyNow" data-modal="BuyNow">
-                <div class="modal-close closeModal">
-                    <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="18" y="1.10693" width="1" height="24" transform="rotate(45 18 1.10693)" fill="#010507"/>
-                        <rect x="19" y="18.1069" width="1" height="24" transform="rotate(135 19 18.1069)" fill="#010507"/>
-                    </svg>
-                </div>
-
-                <p class="added">Швидке замовлення</p>
-
-                <p>Ваши покупки:</p>
-                <div class="BuyNowProduct">
-                    <p class="productName"> Product name </p>
-                    <p class="PdoructQuunt"> 2 x</p>
-                    <p class="ProductPrice">1234 uah</p>
-                </div>
-                <div class="buySum">
-                    <p class="sunToBuy"> Сума покупки : <span>24657 uash</span></p>
-                </div>
-                
-
-                <form class="LoginForm formStyle" action="">
-                    <div class="input-group">
-                        <label class="label">Ваше ПІБ</label>
-                        <input type="text" placeholder="Михайлов Михайіл Миххайлович " class="information-input">
-                    </div>
-
-                    <div class="input-group">
-                        <label class="label">Ваш e-mail</label>
-                        <input type="email" placeholder="Ваш e-mail" class="information-input">
-                    </div>
-                    <div class="input-group">
-                        <label class="label">Ваш номер телефону</label>
-                        <input type="phone" placeholder="097 468 38 21" class="information-input">
-                    </div>
-                    <label class="wrap-checks argee-check">Я погоджуюсь з умовами публічної оферти, повернення та безпеки.
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                    <div class="modal-buttons">
-                        <button class="btn-togo" >Купити</button>
-                    </div>
-                </form>
-
-            </div>
-
-
-
-
+    </div>
 </div>

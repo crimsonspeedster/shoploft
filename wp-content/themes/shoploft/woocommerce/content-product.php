@@ -25,7 +25,7 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 }
 
 $post_thumbnail_id = $product->get_image_id();
-$hover_image_id = get_field('product__image_for_hover', 'option');
+$hover_image_id = get_field('product__image_for_hover', $product->get_id());
 ?>
 <div <?php wc_product_class( 'card', $product ); ?>>
     <a href="<?= $product->get_permalink(); ?>" class="card-image-wrap">

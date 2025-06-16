@@ -263,6 +263,8 @@ html:has(.modal.active) {
 .button-container{
     margin-bottom: 10px;
     .button-link{
+        width: 100%;
+        cursor: pointer;
         display: flex;
         text-decoration: none;;
         background-color: transparent;
@@ -275,7 +277,7 @@ html:has(.modal.active) {
         padding: 17px 0px 17px 35px;
         justify-content: flex-start;
         margin-bottom: 20px;
-        max-width: 365px;;
+        max-width: 365px;
         svg{
             max-width: 28px;
             max-height: 28px;     

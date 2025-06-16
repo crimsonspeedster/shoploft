@@ -193,7 +193,7 @@ document.addEventListener('click', function (e) {
 const toggleBtn = document.getElementById("searchToggle");
 const groupSearch = document.querySelector(".group-search");
 
-toggleBtn.addEventListener("click", () => {
+toggleBtn?.addEventListener("click", () => {
   groupSearch.classList.toggle("active");
 });
 

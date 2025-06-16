@@ -25,6 +25,14 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => 0,
                 'required' => 0,
             ],
+            [
+                'key' => 'type-product_image--hover',
+                'name' => 'product__image_for_hover',
+                'label' => 'Image for product hover',
+                'type' => 'image',
+                'return_format' => 'id',
+                'required' => 0,
+            ],
         ],
         'location' => array(
             array(
