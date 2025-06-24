@@ -189,6 +189,9 @@ add_action('woocommerce_after_add_to_cart_button', function () {
     }
 }, 10);
 add_action('woocommerce_shop_loop_header', function () {
+    get_template_part('partials/woocommerce/collections-slider');
+}, 5);
+add_action('woocommerce_shop_loop_header', function () {
     get_template_part('partials/woocommerce/product-archive-header');
 }, 10);
 add_action('woocommerce_after_shop_loop', function () {
