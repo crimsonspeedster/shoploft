@@ -250,6 +250,25 @@
     }
   }
 }
+
+
+
+.catalog-menu-list.active {
+  a.calalog-menu-link {
+      background-color: #fbfbfb; 
+      color: red;
+      padding-left: 10px;
+  }
+  .submenu-list.active{
+    a{
+      background-color: #fbfbfb; 
+      color: red;
+      padding-left: 10px;
+    }
+  }
+} 
+
+
 .calalog-menu-link {
   width: 100%;
   display: block;

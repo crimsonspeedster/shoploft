@@ -433,7 +433,7 @@
       flex-flow: wrap;
     }
     .tab-name{
-      padding-left: 4px;
+      padding-left: 20px;
       font-size: 13px;
     }
     .wrap-svg svg{
@@ -538,16 +538,25 @@ text-align: right;
   position: absolute;
   right: 39px;
 }
+.links-line{
+  flex-direction: column;
+  a{
+    margin: 15px auto;
+  }
+}
 
 }
 
 @media screen and (max-width: 497px){
-    .story-table__line .status, 
+  .story-table__line .status, 
   .story-table__line .number,
   .story-table__line .data,
   .story-table__line .price
   {
     width: 150px;
+  }
+  .group-search{
+    max-width: 100px;
   }
 }
 

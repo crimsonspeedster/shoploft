@@ -304,6 +304,8 @@ html:has(.modal.active) {
         &.green{
             border: 1px solid #387D17;
             color: #387D17;
+            width: 100%;
+            cursor: pointer;
             svg{
                 path{
                     transition: #387D17;
